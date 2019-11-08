@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j8g-m9-efo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="79K-5n-ecP">
-                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="15" id="hBh-q9-A2O">
                                     <size key="itemSize" width="200" height="50"/>
@@ -31,33 +31,42 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="j2L-OZ-0x5"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8Kh-Xc-1MJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="hq5-6R-edY"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8Kh-Xc-1MJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2nU-dZ-6gf"/>
-                            <constraint firstAttribute="trailing" secondItem="8Kh-Xc-1MJ" secondAttribute="trailing" id="EpV-Kz-Buo"/>
-                            <constraint firstItem="8Kh-Xc-1MJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jka-DX-mey"/>
                             <constraint firstItem="79K-5n-ecP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WB6-4Q-6EL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="79K-5n-ecP" secondAttribute="trailing" id="XFP-Th-4Ai"/>
-                            <constraint firstItem="79K-5n-ecP" firstAttribute="top" secondItem="8Kh-Xc-1MJ" secondAttribute="bottom" id="Xlm-MD-o3S"/>
+                            <constraint firstItem="79K-5n-ecP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y98-cp-ks3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="79K-5n-ecP" secondAttribute="bottom" id="ZdG-rw-yeK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HXN-zI-OFa"/>
                     <connections>
                         <outlet property="collectionView" destination="79K-5n-ecP" id="A9L-sl-Xy4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138.98050974512745"/>
+            <point key="canvasLocation" x="599" y="114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pJW-Ts-L9v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8g-m9-efo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eac-cB-s8W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lm1-GY-A0b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ka7-mP-x9O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="114"/>
         </scene>
     </scenes>
 </document>
