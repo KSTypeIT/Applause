@@ -25,22 +25,22 @@ struct RepositoryDetailsViewModel: RepositoryDetailsViewModelProtocol {
         self.repository = repository
     }
 
-    var name: String {
+    internal var name: String {
         repository.name
     }
-    var id: String {
+    internal var id: String {
         repository.id.description
     }
-    var url: String {
+    internal var url: String {
         repository.url
     }
-    var size: Int {
+    internal var size: Int {
         repository.size
     }
-    var description: String? {
+    internal var description: String? {
         repository.description
     }
-    var language: String? {
+    internal var language: String? {
         repository.language
     }
 }

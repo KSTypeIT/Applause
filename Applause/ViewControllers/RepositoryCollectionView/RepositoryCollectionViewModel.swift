@@ -10,6 +10,7 @@ import Foundation
 
 protocol RepositoryCollectionViewModelDelegate: AnyObject {
     func repositoriesReload()
+    func reqestFailed()
 }
 
 protocol RepositoryCollectionViewModelProtocol {
@@ -28,18 +29,22 @@ final class RepositoryCollectionViewModel {
     private var repositories: [Repository] = []
     private var filteredRepositories: [Repository] = []
 
-    init (dataProvider: DataProviding = DataProvider()){
+    init (dataProvider: DataProviding = DataProvider()) {
         self.dataProvider = dataProvider
     }
 
     public func viewDidLoad() {
+        //this is called here since we need data to work with. Could happen in some Loading Controller before we load the RepositoyColectionVC.
+
         dataProvider.requestAllRepositories(completionHandler: { [weak self] repositories in
             self?.repositories = repositories
              DispatchQueue.main.async {
                 self?.delegate?.repositoriesReload()
              }
-        }, errorHandler: { _ in
-            //
+        }, errorHandler: { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.delegate?.reqestFailed()
+            }
         })
     }
 

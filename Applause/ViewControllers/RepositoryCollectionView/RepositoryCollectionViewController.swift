@@ -13,7 +13,7 @@ private enum Constans: CGFloat {
     case minimumLineSpacing = 10
 }
 
-fileprivate enum Static: String {
+private enum Static: String {
     case cellReuseIdentifier = "kRepositoryCell"
     case cellNibName = "RepositoryCollectionViewCell"
 }
@@ -22,15 +22,15 @@ final class RepositoryCollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(searchResultsController: nil)
 
-    let viewModel = RepositoryCollectionViewModel()
+    private let viewModel = RepositoryCollectionViewModel()
 
-    var isSearchBarEmpty: Bool {
+    private var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true
     }
 
-    var isFiltering: Bool {
+    private var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty
     }
 
@@ -76,6 +76,7 @@ extension RepositoryCollectionViewController: UICollectionViewDataSource, UIColl
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // If this app was made to be bigger this should be propobally handeled by some Flow Controller
+        // Also created a DetailVC from XIB directy insted of createing a Segue in Storyboard to "show" handling of ViewControllers in code
         let repository = viewModel.getRepositoryAtIndex(indexPath: indexPath, filtered: isFiltering)
         let viewModel = RepositoryDetailsViewModel(repository: repository)
         let repositoryDetailsVC = RepositoryDetailsViewController(repositoryDetailsViewModel: viewModel)
@@ -84,6 +85,10 @@ extension RepositoryCollectionViewController: UICollectionViewDataSource, UIColl
 }
 
 extension RepositoryCollectionViewController: RepositoryCollectionViewModelDelegate {
+    func reqestFailed() {
+        // Inform the user about failed request - maybe ask the user to refresh, check internet connection etc.
+    }
+
     func repositoriesReload() {
         collectionView.reloadData()
     }

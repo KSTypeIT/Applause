@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public struct Repository: Decodable {
     let id: Int
     let name: String

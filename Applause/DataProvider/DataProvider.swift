@@ -14,7 +14,7 @@ public enum RequestError: Error {
 }
 fileprivate enum EndpointURL: String {
     case apiUrl = "https://api.github.com"
-    case allRepositories = "/orgs/applauseoss/repos?per_page=135"
+    case allRepositories = "/orgs/applauseoss/repos?per_page=10"
 }
 
 public protocol DataProviding {
