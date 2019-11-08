@@ -18,7 +18,7 @@ class RepositoryDetailsViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testRepositoryDEtailsViewModel() {
+    func testRepositoryDetailsViewModel() {
         let repository: Repository = Repository(id: 111,
                                                 name: "testRepo",
                                                 url: "www.testULR.com",
