@@ -32,7 +32,9 @@ final class RepositoryCollectionViewModel {
     public func viewDidLoad() {
         dataProvider.requestAllRepositories(completionHandler: { [weak self] repositories in
             self?.repositories = repositories
-            self?.delegate?.repositoriesDownloaded()
+             DispatchQueue.main.async {
+                self?.delegate?.repositoriesDownloaded()
+             }
         }, errorHandler: { _ in
             //
         })
