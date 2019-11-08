@@ -23,7 +23,7 @@ protocol RepositoryCollectionViewModelProtocol {
 
 final class RepositoryCollectionViewModel: RepositoryCollectionViewModelProtocol {
 
-    weak var delegate: RepositoryCollectionViewModelDelegate?
+    public weak var delegate: RepositoryCollectionViewModelDelegate?
 
     private let dataProvider: DataProviding
     private var repositories: [Repository] = []
@@ -33,7 +33,7 @@ final class RepositoryCollectionViewModel: RepositoryCollectionViewModelProtocol
         self.dataProvider = dataProvider
     }
 
-    public func viewDidLoad() {
+    internal func viewDidLoad() {
         //this is called here since we need data to work with. Could happen in some Loading Controller before we load the RepositoyColectionVC.
 
         dataProvider.requestAllRepositories(completionHandler: { [weak self] repositories in
@@ -48,22 +48,22 @@ final class RepositoryCollectionViewModel: RepositoryCollectionViewModelProtocol
         })
     }
 
-    public func getRepositories() -> [Repository] {
+    internal func getRepositories() -> [Repository] {
         return self.repositories
     }
 
-    public func getFilteredRepositories() -> [Repository] {
+    internal func getFilteredRepositories() -> [Repository] {
            return self.filteredRepositories
        }
 
-    public func getRepositoryAtIndex(indexPath: IndexPath, filtered: Bool) -> Repository {
+    internal func getRepositoryAtIndex(indexPath: IndexPath, filtered: Bool) -> Repository {
         if filtered {
            return self.filteredRepositories[indexPath.row]
         }
         return self.repositories[indexPath.row]
     }
 
-    public func findRepository(_ searchString: String) {
+    internal func findRepository(_ searchString: String) {
         self.filteredRepositories = self.repositories.filter {
             $0.name.range(of: searchString, options: .caseInsensitive) != nil
         }

@@ -39,7 +39,7 @@ class RepositoryCollectionViewModelTests: XCTestCase, RepositoryCollectionViewMo
     }
 
     func reqestFailed() {
-          //
+        // Could be used for failed action
     }
 }
 
