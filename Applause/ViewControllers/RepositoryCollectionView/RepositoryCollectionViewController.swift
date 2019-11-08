@@ -90,7 +90,9 @@ extension RepositoryCollectionViewController: RepositoryCollectionViewModelDeleg
     }
 
     func repositoriesReload() {
-        collectionView.reloadData()
+         DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 }
 

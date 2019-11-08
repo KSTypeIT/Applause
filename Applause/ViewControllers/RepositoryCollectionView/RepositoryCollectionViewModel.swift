@@ -38,13 +38,10 @@ final class RepositoryCollectionViewModel: RepositoryCollectionViewModelProtocol
 
         dataProvider.requestAllRepositories(completionHandler: { [weak self] repositories in
             self?.repositories = repositories
-             DispatchQueue.main.async {
-                self?.delegate?.repositoriesReload()
-             }
+            self?.delegate?.repositoriesReload()
+
         }, errorHandler: { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.delegate?.reqestFailed()
-            }
+            self?.delegate?.reqestFailed()
         })
     }
 
