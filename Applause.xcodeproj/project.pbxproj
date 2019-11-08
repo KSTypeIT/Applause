@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		853AF7E123749F7600B804BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF7E023749F7600B804BE /* AppDelegate.swift */; };
 		853AF7E323749F7600B804BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF7E223749F7600B804BE /* SceneDelegate.swift */; };
-		853AF7E523749F7600B804BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF7E423749F7600B804BE /* ViewController.swift */; };
+		853AF7E523749F7600B804BE /* RepositoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF7E423749F7600B804BE /* RepositoryCollectionViewController.swift */; };
 		853AF7E823749F7600B804BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853AF7E623749F7600B804BE /* Main.storyboard */; };
 		853AF7EA23749F7800B804BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853AF7E923749F7800B804BE /* Assets.xcassets */; };
 		853AF7ED23749F7800B804BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853AF7EB23749F7800B804BE /* LaunchScreen.storyboard */; };
 		853AF7F823749F7800B804BE /* ApplauseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF7F723749F7800B804BE /* ApplauseTests.swift */; };
 		853AF80323749F7900B804BE /* ApplauseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF80223749F7900B804BE /* ApplauseUITests.swift */; };
+		853AF81123749FB900B804BE /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF81023749FB900B804BE /* DataProvider.swift */; };
+		853AF8142374A19000B804BE /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF8132374A19000B804BE /* DataObjects.swift */; };
+		853AF81923758AD600B804BE /* RepositoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF81723758AD600B804BE /* RepositoryCollectionViewCell.swift */; };
+		853AF81A23758AD600B804BE /* RepositoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853AF81823758AD600B804BE /* RepositoryCollectionViewCell.xib */; };
+		853AF81C2375907000B804BE /* RepositoryCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AF81B2375907000B804BE /* RepositoryCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,7 @@
 		853AF7DD23749F7600B804BE /* Applause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Applause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		853AF7E023749F7600B804BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		853AF7E223749F7600B804BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		853AF7E423749F7600B804BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		853AF7E423749F7600B804BE /* RepositoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionViewController.swift; sourceTree = "<group>"; };
 		853AF7E723749F7600B804BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		853AF7E923749F7800B804BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853AF7EC23749F7800B804BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		853AF7FE23749F7900B804BE /* ApplauseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplauseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		853AF80223749F7900B804BE /* ApplauseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplauseUITests.swift; sourceTree = "<group>"; };
 		853AF80423749F7900B804BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		853AF81023749FB900B804BE /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		853AF8132374A19000B804BE /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		853AF81723758AD600B804BE /* RepositoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		853AF81823758AD600B804BE /* RepositoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		853AF81B2375907000B804BE /* RepositoryCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +111,8 @@
 			children = (
 				853AF7E023749F7600B804BE /* AppDelegate.swift */,
 				853AF7E223749F7600B804BE /* SceneDelegate.swift */,
-				853AF7E423749F7600B804BE /* ViewController.swift */,
+				853AF81523758A7600B804BE /* ViewControllers */,
+				853AF81223749FBF00B804BE /* DataProvider */,
 				853AF7E623749F7600B804BE /* Main.storyboard */,
 				853AF7E923749F7800B804BE /* Assets.xcassets */,
 				853AF7EB23749F7800B804BE /* LaunchScreen.storyboard */,
@@ -126,6 +137,34 @@
 				853AF80423749F7900B804BE /* Info.plist */,
 			);
 			path = ApplauseUITests;
+			sourceTree = "<group>";
+		};
+		853AF81223749FBF00B804BE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				853AF8132374A19000B804BE /* DataObjects.swift */,
+				853AF81023749FB900B804BE /* DataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		853AF81523758A7600B804BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				853AF81623758A9B00B804BE /* RepositoryCollectionView */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		853AF81623758A9B00B804BE /* RepositoryCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				853AF7E423749F7600B804BE /* RepositoryCollectionViewController.swift */,
+				853AF81723758AD600B804BE /* RepositoryCollectionViewCell.swift */,
+				853AF81823758AD600B804BE /* RepositoryCollectionViewCell.xib */,
+				853AF81B2375907000B804BE /* RepositoryCollectionViewModel.swift */,
+			);
+			path = RepositoryCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853AF81A23758AD600B804BE /* RepositoryCollectionViewCell.xib in Resources */,
 				853AF7ED23749F7800B804BE /* LaunchScreen.storyboard in Resources */,
 				853AF7EA23749F7800B804BE /* Assets.xcassets in Resources */,
 				853AF7E823749F7600B804BE /* Main.storyboard in Resources */,
@@ -259,8 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853AF7E523749F7600B804BE /* ViewController.swift in Sources */,
+				853AF7E523749F7600B804BE /* RepositoryCollectionViewController.swift in Sources */,
+				853AF8142374A19000B804BE /* DataObjects.swift in Sources */,
 				853AF7E123749F7600B804BE /* AppDelegate.swift in Sources */,
+				853AF81123749FB900B804BE /* DataProvider.swift in Sources */,
+				853AF81923758AD600B804BE /* RepositoryCollectionViewCell.swift in Sources */,
+				853AF81C2375907000B804BE /* RepositoryCollectionViewModel.swift in Sources */,
 				853AF7E323749F7600B804BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
