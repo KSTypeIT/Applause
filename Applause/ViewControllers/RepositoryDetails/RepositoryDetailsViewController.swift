@@ -18,6 +18,7 @@ final class RepositoryDetailsViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var lanugaeLabel: UILabel!
+    @IBOutlet private weak var sizeLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var urlLabel: UILabel!
 
@@ -34,14 +35,15 @@ final class RepositoryDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUp()
+        self.bindViewModel()
     }
 
-    private func setUp() {
-        nameLabel.text = "Name: \(viewModel.name)"
-        idLabel.text = "Repository id: \(viewModel.id)"
-        lanugaeLabel.text = "Language: \(viewModel.language ?? "")"
-        descriptionLabel.text = "Description: \(viewModel.description ?? "")"
+    private func bindViewModel() {
+        nameLabel.text = viewModel.name
+        idLabel.text = viewModel.id
+        lanugaeLabel.text = viewModel.language
+        sizeLabel.text = viewModel.size
+        descriptionLabel.text = viewModel.description
         urlLabel.text = viewModel.url
     }
 }

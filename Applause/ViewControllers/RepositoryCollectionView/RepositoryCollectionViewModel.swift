@@ -17,11 +17,11 @@ protocol RepositoryCollectionViewModelProtocol {
     func viewDidLoad()
     func getRepositories() -> [Repository]
     func getFilteredRepositories() -> [Repository] 
-    func getRepositoryAtIndex(indexPath: IndexPath) -> Repository
+    func getRepositoryAtIndex(indexPath: IndexPath, filtered: Bool) -> Repository
     func findRepository(_ searchString: String)
 }
 
-final class RepositoryCollectionViewModel {
+final class RepositoryCollectionViewModel: RepositoryCollectionViewModelProtocol {
 
     weak var delegate: RepositoryCollectionViewModelDelegate?
 

@@ -13,6 +13,7 @@
                 <outlet property="idLabel" destination="oFT-BL-T88" id="EkX-ho-w03"/>
                 <outlet property="lanugaeLabel" destination="ocK-mg-ktG" id="KAT-HP-tRq"/>
                 <outlet property="nameLabel" destination="kXm-La-KP6" id="vzW-27-MHs"/>
+                <outlet property="sizeLabel" destination="cOm-Pd-Hne" id="HKh-VC-T2g"/>
                 <outlet property="urlLabel" destination="59L-UH-VDO" id="2Du-uN-vku"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cdU-N7-hB2"/>
             </connections>
@@ -26,31 +27,37 @@
                     <rect key="frame" x="20" y="64" width="374" height="778"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXm-La-KP6">
-                            <rect key="frame" x="0.0" y="0.0" width="42" height="109"/>
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="81.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFT-BL-T88">
-                            <rect key="frame" x="0.0" y="167" width="42" height="109.5"/>
+                            <rect key="frame" x="0.0" y="139.5" width="42" height="81"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-mg-ktG">
-                            <rect key="frame" x="0.0" y="334.5" width="42" height="109"/>
+                            <rect key="frame" x="0.0" y="278.5" width="42" height="81.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOm-Pd-Hne">
+                            <rect key="frame" x="0.0" y="418" width="42" height="81.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9s-9G-y8K">
-                            <rect key="frame" x="0.0" y="501.5" width="42" height="109.5"/>
+                            <rect key="frame" x="0.0" y="557.5" width="42" height="81"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59L-UH-VDO">
-                            <rect key="frame" x="0.0" y="669" width="42" height="109"/>
+                            <rect key="frame" x="0.0" y="696.5" width="42" height="81.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

@@ -12,7 +12,7 @@ protocol RepositoryDetailsViewModelProtocol {
     var name: String { get }
     var id: String { get }
     var url: String { get }
-    var size: Int { get }
+    var size: String { get }
     var description: String? { get }
     var language: String? { get }
 }
@@ -26,21 +26,21 @@ struct RepositoryDetailsViewModel: RepositoryDetailsViewModelProtocol {
     }
 
     internal var name: String {
-        repository.name
+        "Name: \(repository.name)"
     }
     internal var id: String {
-        repository.id.description
+        "Repository id: \(repository.id.description)"
     }
     internal var url: String {
-        repository.url
+        "ULR: \(repository.url)"
     }
-    internal var size: Int {
-        repository.size
+    internal var size: String {
+        "Size: \(repository.size)"
     }
     internal var description: String? {
-        repository.description
+        "Description: \(repository.description ?? "")"
     }
     internal var language: String? {
-        repository.language
+        "Language: \(repository.language ?? "")"
     }
 }
