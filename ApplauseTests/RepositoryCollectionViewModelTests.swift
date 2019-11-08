@@ -28,9 +28,9 @@ class RepositoryCollectionViewModelTests: XCTestCase, RepositoryCollectionViewMo
         viewModel.delegate = self
         viewModel.findRepository("xxx")
 
-        XCTAssertEqual(viewModel.getFilteredRepositories().count, 0)
-        XCTAssertEqual(viewModel.getRepositories().count, 5)
-        XCTAssertEqual(reloadCount, 1)
+        XCTAssertEqual(viewModel.getFilteredRepositories().count, 0) // There is no Repositories Containing XXX in their name
+        XCTAssertEqual(viewModel.getRepositories().count, 5) // Full Repository list is 5
+        XCTAssertEqual(reloadCount, 1) // The delegate Method 'repositoriesReload' should be called once after 'findRepository'
     }
 
     func repositoriesReload() {
@@ -41,9 +41,7 @@ class RepositoryCollectionViewModelTests: XCTestCase, RepositoryCollectionViewMo
     func reqestFailed() {
           //
     }
-
 }
-
 
 class DataProviderMock: DataProviding {
     private let repositories: [Repository]

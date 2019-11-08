@@ -20,11 +20,11 @@ class RepositoryDetailsViewModelTests: XCTestCase {
 
     func testRepositoryDEtailsViewModel() {
         let repository: Repository = Repository(id: 111,
-                                                       name: "testRepo",
-                                                       url: "www.testULR.com",
-                                                       size: 123,
-                                                       description: "Test Description",
-                                                       language: "Swift 5")
+                                                name: "testRepo",
+                                                url: "www.testULR.com",
+                                                size: 123,
+                                                description: "Test Description",
+                                                language: "Swift 5")
         let viewModel: RepositoryDetailsViewModelProtocol = RepositoryDetailsViewModel(repository: repository)
 
         XCTAssertEqual(viewModel.name, "Name: testRepo")
