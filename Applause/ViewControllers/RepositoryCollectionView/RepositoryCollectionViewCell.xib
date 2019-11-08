@@ -16,20 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="274" height="279"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-tT-2si">
-                        <rect key="frame" x="20" y="20" width="234" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALa-g2-2Zm">
-                        <rect key="frame" x="212" y="238" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggU-Jb-pUL">
-                        <rect key="frame" x="20" y="61" width="234" height="157"/>
+                        <rect key="frame" x="116" y="129" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,23 +26,13 @@
             </view>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="5Nh-tT-2si" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="1gw-q3-h5n"/>
-                <constraint firstItem="ggU-Jb-pUL" firstAttribute="top" secondItem="5Nh-tT-2si" secondAttribute="bottom" constant="20" id="2y6-0W-PHE"/>
-                <constraint firstItem="5Nh-tT-2si" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="4BL-uI-jlv"/>
-                <constraint firstAttribute="trailing" secondItem="ggU-Jb-pUL" secondAttribute="trailing" constant="20" id="52b-vY-96Q"/>
-                <constraint firstAttribute="trailing" secondItem="5Nh-tT-2si" secondAttribute="trailing" constant="20" id="8Ft-F7-8Kp"/>
-                <constraint firstItem="ggU-Jb-pUL" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="B2k-l9-01T"/>
-                <constraint firstItem="ALa-g2-2Zm" firstAttribute="top" secondItem="ggU-Jb-pUL" secondAttribute="bottom" constant="20" id="WYS-Vm-gYl"/>
-                <constraint firstAttribute="trailing" secondItem="ALa-g2-2Zm" secondAttribute="trailing" constant="20" id="kyZ-JL-VFI"/>
-                <constraint firstAttribute="bottom" secondItem="ALa-g2-2Zm" secondAttribute="bottom" constant="20" id="mlE-Zd-kFP"/>
-                <constraint firstItem="ggU-Jb-pUL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="xq7-zU-UWx"/>
+                <constraint firstItem="ALa-g2-2Zm" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vsR-N7-k66"/>
+                <constraint firstItem="ALa-g2-2Zm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="yoE-eo-iO8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="274" height="279"/>
             <connections>
-                <outlet property="idString" destination="ggU-Jb-pUL" id="vvD-dg-9uV"/>
                 <outlet property="nameLabel" destination="ALa-g2-2Zm" id="KV2-lU-aUr"/>
-                <outlet property="urlLabel" destination="5Nh-tT-2si" id="CAC-Av-7tR"/>
             </connections>
             <point key="canvasLocation" x="-140.80000000000001" y="24.7376311844078"/>
         </collectionViewCell>

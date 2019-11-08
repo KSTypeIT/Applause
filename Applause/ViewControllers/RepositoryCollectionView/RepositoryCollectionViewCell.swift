@@ -9,18 +9,18 @@
 import UIKit
 
 class RepositoryCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet private weak var urlLabel: UILabel!
-    @IBOutlet private weak var idString: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = nil
+    }
+
     public func setupWith(repository: Repository) {
-        urlLabel.text = repository.url
-        idString.text = repository.id.description
         nameLabel.text = repository.name
     }
 

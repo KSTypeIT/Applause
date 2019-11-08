@@ -13,10 +13,14 @@ private enum Constans: CGFloat {
     case minimumLineSpacing = 10
 }
 
+fileprivate enum Static: String {
+    case cellReuseIdentifier = "kRepositoryCell"
+    case cellNibName = "RepositoryCollectionViewCell"
+}
+
 final class RepositoryCollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var searchBar: UISearchBar!
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -34,7 +38,8 @@ final class RepositoryCollectionViewController: UIViewController {
         super.viewDidLoad()
         searchControllerSetup()
         defineCollectionViewLayout()
-        collectionView.register(UINib(nibName: "RepositoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "kRepositoryCell")
+        collectionView.register(UINib(nibName: Static.cellNibName.rawValue, bundle: nil),
+                                forCellWithReuseIdentifier: Static.cellReuseIdentifier.rawValue)
 
         viewModel.delegate = self
         viewModel.viewDidLoad()
@@ -56,28 +61,31 @@ final class RepositoryCollectionViewController: UIViewController {
     }
 }
 
-extension RepositoryCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, RepositoryCollectionViewModelDelegate {
-    func repositoriesReload() {
-        collectionView.reloadData()
-    }
+extension RepositoryCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        if isFiltering {
-            return viewModel.getFilteredRepositories().count
-        }
-        return viewModel.getRepositories().count
+        return isFiltering ? viewModel.getFilteredRepositories().count : viewModel.getRepositories().count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: RepositoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "kRepositoryCell", for: indexPath) as! RepositoryCollectionViewCell
+        let cell: RepositoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Static.cellReuseIdentifier.rawValue,
+                                                                                    for: indexPath) as! RepositoryCollectionViewCell
         cell.setupWith(repository: viewModel.getRepositoryAtIndex(indexPath: indexPath, filtered: isFiltering))
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        // If this app was made to be bigger this should be propobally handeled by some Flow Controller
+        let repository = viewModel.getRepositoryAtIndex(indexPath: indexPath, filtered: isFiltering)
+        let viewModel = RepositoryDetailsViewModel(repository: repository)
+        let repositoryDetailsVC = RepositoryDetailsViewController(repositoryDetailsViewModel: viewModel)
+        self.navigationController?.pushViewController(repositoryDetailsVC, animated: true)
+    }
+}
 
+extension RepositoryCollectionViewController: RepositoryCollectionViewModelDelegate {
+    func repositoriesReload() {
+        collectionView.reloadData()
     }
 }
 
