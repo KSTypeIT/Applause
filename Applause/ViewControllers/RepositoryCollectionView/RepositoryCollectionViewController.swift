@@ -20,10 +20,9 @@ private enum Static: String {
 
 final class RepositoryCollectionViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private let searchController = UISearchController(searchResultsController: nil)
-
     private let viewModel = RepositoryCollectionViewModel()
 
     private var isSearchBarEmpty: Bool {
@@ -64,7 +63,7 @@ final class RepositoryCollectionViewController: UIViewController {
 extension RepositoryCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return isFiltering ? viewModel.getFilteredRepositories().count : viewModel.getRepositories().count
+        return viewModel.getRepositories(filtered: isFiltering).count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -15,8 +15,7 @@ protocol RepositoryCollectionViewModelDelegate: AnyObject {
 
 protocol RepositoryCollectionViewModelProtocol {
     func viewDidLoad()
-    func getRepositories() -> [Repository]
-    func getFilteredRepositories() -> [Repository] 
+    func getRepositories(filtered: Bool) -> [Repository]
     func getRepositoryAtIndex(indexPath: IndexPath, filtered: Bool) -> Repository
     func findRepository(_ searchString: String)
 }
@@ -45,19 +44,12 @@ final class RepositoryCollectionViewModel: RepositoryCollectionViewModelProtocol
         })
     }
 
-    internal func getRepositories() -> [Repository] {
-        return self.repositories
+    internal func getRepositories(filtered: Bool) -> [Repository] {
+        return filtered ? self.filteredRepositories : self.repositories
     }
 
-    internal func getFilteredRepositories() -> [Repository] {
-           return self.filteredRepositories
-       }
-
     internal func getRepositoryAtIndex(indexPath: IndexPath, filtered: Bool) -> Repository {
-        if filtered {
-           return self.filteredRepositories[indexPath.row]
-        }
-        return self.repositories[indexPath.row]
+        return filtered ? self.filteredRepositories[indexPath.row] : self.repositories[indexPath.row]
     }
 
     internal func findRepository(_ searchString: String) {
